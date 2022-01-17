@@ -2,6 +2,11 @@ let nav = {}
 let mobile_nav = false
 let is_home = false
 
+document.addEventListener("DOMContentLoaded", function(){
+    init()
+});
+  
+
 function init() {
     is_home = window.location.href.includes('index.html')
 
