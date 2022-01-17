@@ -69,12 +69,12 @@ document.onscroll = function(e) {
 }
 
 function scroll_header() {
-    if(window.scrollY > 1){
+    if(window.scrollY > 3){
         document.querySelector('#main_logo').style.height = '0'
         nav.dom.style.background = '#fffd'
         // nav.img.style.opacity = '1'
         nav.img.style.height = '90px'
-    }else if(window.scrollY < 40){
+    }else{
         document.querySelector('#main_logo').style.height = '100vh'
         nav.dom.style.background = 'transparent'
         // nav.img.style.opacity = '0'
