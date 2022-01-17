@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkLee Telecom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&family=Roboto&family=Varela+Round&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://kit.fontawesome.com/0671f8af26.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
+    <script src="index.js"></script>
+</head>
+<body onload="init()" onresize="resize()">
+    <nav>
+      <img src="img/logo.png" alt="LC" />
+      <div id="mobile_nav" onclick="toggle_mobile_nav()"><i class="fas fa-bars"></i></div>
+      <ul>
+        <li><a id="nav_home" href="index.html#">Home</a></li>
+        <li><a id="nav_contact" href="index.html#contact">Contact</a></li>
+        <li><a id="nav_jobs" href="index.html#jobs" class="active">Careers</a></li>
+        <li><a id="nav_" href="login.html">Login</a></li>
+      </ul>
+    </nav>
+<!-----|  End Header  |--------------------------------------------------->
+
+    <div id="application">
+        <form>
+            <h1>Applicant Information</h1>
+            <input class="half" placeholder="First Name" />
+            <input class="half" placeholder="Last Name" />
+            <input id="street" placeholder="Street Address" />
+            <input id="apt" placeholder="Apt #" />
+            <input id="city" placeholder="City" />
+            <input id="state" placeholder="State" />
+            <input id="zip" placeholder="Zip Code" />
+            <input class="half" placeholder="Phone Number" />
+            <input class="half" placeholder="Email" />
+            <br><br>
+            <div class="half">Are you a citizen of the United States? <span>Yes <input type="radio" name="is_citizen" /> No <input type="radio" name="is_citizen" /></span></div>
+            <div class="half">If not, are you authorized to work in the U.S.? <span>Yes <input type="radio" name="auth_us_work" /> No <input type="radio" name="auth_us_work" /></span></div>
+            <div class="half">Have you ever worked for this company? <span>Yes <input type="radio" name="worked_here_before" /> No <input type="radio" name="worked_here_before" /></span></div>
+            <div class="half">If Yes, When? <input id="when" /></div>
+            <div class="half">Have you ever been convicted of a felony? <span>Yes <input type="radio" name="felony" /> No <input type="radio" name="felony" /></span></div><br>
+            <div class="full">If yes, explain: <input id="explain" /></div>
+
+            <h1>References</h1>
+            <fieldset>
+                <legend>Reference 1</legend>
+                <input class="ref_left" placeholder="Name" /> <input class="ref_right" placeholder="Relationship" />
+                <input class="ref_left" placeholder="Company" /> <input class="ref_right" placeholder="Phone Number" />
+            </fieldset>
+            
+            <fieldset>
+                <legend>Reference 2</legend>
+                <input class="ref_left" placeholder="Name" /> <input class="ref_right" placeholder="Relationship" />
+                <input class="ref_left" placeholder="Company" /> <input class="ref_right" placeholder="Phone Number" />
+            </fieldset>
+            
+            <fieldset>
+                <legend>Reference 3</legend>
+                <input class="ref_left" placeholder="Name" /> <input class="ref_right" placeholder="Relationship" />
+                <input class="ref_left" placeholder="Company" /> <input class="ref_right" placeholder="Phone Number" />
+            </fieldset>
+
+            <input type="submit" id="submit" value="Submit" />
+        </form>
+        
+    </div>
+
+<!-----|  Begin Footer  |------------------------------------------------->
+  <footer>
+    <div style="float: left; display: inline-block;">
+      &copy; Copyright LinkLee Telecom LLC 2022 <br>
+      <a href="privacy_policy.html">Privacy Policy</a> <br>
+    </div>
+    
+    <div style="float: right; display: inline-block;">
+      <h4>Contact</h4>
+      <i class="fas fa-phone"></i> <a href="tel:513-555-6969">513-555-6969</a><br>
+      <i class="fas fa-envelope"></i> <a href="mailto:example@linklee.com">example@linklee.com</a><br>
+    </div>
+
+    <div style="position: absolute; bottom: 10px; right: 10px;">
+      <a href="#">Barret Web Design LLC.</a>
+    </div>
+  </footer>
+</body>
+</html>

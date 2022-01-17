@@ -1,0 +1,371 @@
+$theme-color: #0087ca;
+$theme-transparent: #0087cacc;
+$scroll-background: white;
+
+// Scrollbar
+    ::-webkit-scrollbar {
+        height: 8px;
+        width: 8px;
+        background: $scroll-background;
+    }
+
+    ::-webkit-scrollbar-thumb { background: $theme-color; }
+
+    html, body {
+        scrollbar-color: $theme-color $scroll-background;
+        scrollbar-width: thin;
+    }
+
+    #psudo_scroll {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 8px;
+        height: 100vh;
+        background: $scroll-background;
+        display: none;
+        z-index: 9;
+    }
+// End scrollbar
+
+body {
+    margin: 0;
+    background: #bbb;
+    background: url(img/background.jpg);
+    // background: url(https://static.vecteezy.com/system/resources/previews/002/072/481/non_2x/abstract-geometric-white-wallpaper-free-vector.jpg);
+    
+    // background-size: 1500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    // background-position: center;
+}
+
+body, input, textarea {
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    // font-family: 'Roboto', sans-serif;
+}
+
+input, textarea {
+    display: block;
+    padding: 5px;
+    margin: auto;
+    margin-top: 5px;
+}
+
+textarea {
+    min-height: 80px;
+    min-width: 100%;
+}
+
+#main_logo {
+    background: url(img/3d.jpg);
+    position: fixed;
+    // background: url();
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    transition: .5s;
+}
+
+nav {
+    z-index: 9;
+    position: fixed;
+    transition: .5s;
+    // bottom: 0;
+    width: 100%;
+    // box-shadow: 0 -2px 7px black;
+    background: #fffd;
+    
+    padding: 10px;
+    // display: none;
+    min-height: 60px;
+
+    #mobile_nav {
+        display: none;
+        padding: 5px 10px 5px 10px;
+        // margin: 5px;
+        float: right;
+        margin-right: 40px;
+        font-size: 45px;
+        cursor: pointer;
+        color: $theme-color;
+        border-radius: 10px;
+        transition: .2s;
+    }
+
+    #mobile_nav.active {
+        background: $theme-color;
+        color: white;
+    }
+
+    img {
+        height: 90px;
+        display: inline-block;
+        margin-right: auto;
+        transition: .5s;
+    }
+    
+    ul {
+        // min-height: 30px;
+        float: right;
+        display: inline-flex;
+        justify-content: flex-end;
+        box-sizing: border-box;
+        line-height: 60px;
+        margin: 0;
+        margin-right: 40px;
+        position: absolute;
+        bottom: 25%;
+        right: 0;
+    }
+    
+    li {
+        list-style: none;
+        margin-right: 20px;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #0093D9;
+        display: inline-block;
+        position: relative;
+      }
+      
+    a:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 3px;
+        bottom: 13px;
+        left: 0;
+        background-color: $theme-color;
+        transform-origin: bottom center;
+        transition: transform 0.25s ease-out;
+      }
+      
+    a:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom center;
+      }
+
+      .active:after { transform: scaleX(1); }
+}
+    
+h1 {
+    padding-top: 120px;
+    color: $theme-color;
+}
+
+#application {
+    background: #fffc;
+    width: 800px;
+    margin: auto;
+    padding: 2%;
+    padding-top: 90px;
+    // text-align: center;
+
+    h1 {
+        margin-bottom: 5px;
+        margin-left: -10px;
+        margin-top: 0;
+        padding-top: 40px;
+    }
+
+    input {
+        display: inline-block;
+        border: 0;
+        border-bottom: 1px solid grey;
+        background: transparent;
+    }
+
+    div { 
+        display: inline-block; 
+        margin-right: 17px; 
+        font-size: 10pt; 
+    }
+
+    span { float: right; }
+
+    .half { width: 47%; }
+    .third { width: 30%; }
+    .full { width: 100%; }
+    #street { width: 78%; }
+    #apt { width: 16%; }
+    #state { width: 16%; }
+    #city { width: 60%; }
+    #zip { width: 16%; }
+    #when { width: 73%; }
+    #explain { width: 84%; }
+
+    fieldset {
+        border: 1px solid #444;
+        margin-bottom: 15px;
+
+        legend {
+            font-size: 14pt;
+            // font-weight: bold;
+            padding-left: 10px;
+            padding-right: 10px;
+            color: #444;
+        }
+    }
+    .ref_left { width: 76%; }
+    .ref_right { width: 20%; }
+}
+
+@media screen and (max-width: 850px) {
+    #application {
+        width: 90%;
+        min-width: 350px;
+        padding: 2%;
+        padding-top: 90px;
+
+        h1 {
+            margin: 0;
+        }
+    
+        input {
+            display: block;
+            width: 90%!important;
+            // padding: 9px;
+        }
+    
+        div { 
+            display: block; 
+            font-size: 10pt; 
+            margin-bottom:5px;
+        }
+    
+        span {
+            float: right;
+            display: block;
+
+            input {
+                display: inline!important;
+                margin: 0;
+                padding: 0;
+                width: 10px!important;
+            }
+        }
+
+        #when { width: 70%!important; display: inline; }
+        #explain { width: 70%!important; display: inline; }
+    
+        .half { width: 100%; }
+    
+        .ref_left { width: 60%!important; display: inline; }
+        .ref_right { width: 30%!important; display: inline; }
+    }
+}
+
+#container {
+    padding: 40px;
+    // padding-top: 130px;
+
+    p {
+        max-width: 500px;
+    }
+
+    form {
+        width: 230px;
+    }
+
+    input, textarea {
+        width: 100%;
+    }
+}
+
+#submit {
+    width: 100px!important;
+}
+
+button, #submit {
+    background: $theme-color!important;
+    border-radius: 5px;
+    border: 3px outset $theme-color;
+    padding: 8px;
+    color: white;
+    font-size: 1rem;
+    transition: .3s;
+    cursor: pointer;
+}
+
+button:hover, #submit:hover {
+    // border: 3px inset $theme-color;
+    filter: saturate(140%);
+    // padding-left: 15px;
+}
+
+footer {
+    position: relative;
+    padding: 20px;
+    margin-top: 80px;
+    // width: 100%;
+    height: 100px;
+    background: $theme-transparent;
+    box-shadow: 0 0px 10px $theme-transparent;
+    color: white;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    h4 {
+        padding: 0;
+        margin: 0;
+        font-size: 16pt;
+        margin-left: 5px;
+        margin-bottom: 3px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    body {background-size: 1500px;}
+}
+
+@media screen and (max-width: 700px) {
+    ul {
+        // display: none!important;
+        position: fixed;
+        right: -210px;
+        top: 150px;
+        display: block!important;
+        background: #fffe;
+        margin-right: 0!important;
+        border: 2px solid $theme-color;
+        border-radius: 10px 0 0 10px;
+        padding: 30px;
+        padding-left: 80px;
+        text-align: right;
+        transition: .5s;
+
+        li {
+            margin: 0;
+        }
+    }
+
+    #mobile_nav {
+        display: inline-block!important;
+    }
+
+    footer {
+        background: $theme-color;
+        height: 150px;
+    }
+
+    nav img {
+        max-height: 100px;
+    }
+}
