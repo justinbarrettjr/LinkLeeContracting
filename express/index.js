@@ -3,12 +3,26 @@ let mobile_nav = false
 let is_home = false
 
 function init() {
-    is_home = window.location.href.includes('index')
-    
+    is_home = window.location.href.includes('index.html')
+
     nav.dom = document.querySelector("nav")
     nav.img = document.querySelector("nav img")
     nav.ul = document.querySelector("nav ul")
-    scroll_header()
+
+    if(is_home && window.scrollY > 1){
+        document.querySelector('#main_logo').style.display = 'none'
+        setTimeout(function() {
+            document.querySelector('#main_logo').style.display = 'block'
+        }, 500)
+    }else if(is_home){
+        nav.dom.style.display = 'none'
+        nav.dom.style.opacity = '0'
+        setTimeout(function() { nav.dom.style.display = 'block' }, 500)
+        setTimeout(function() { nav.dom.style.opacity = '1' }, 600)
+    }
+
+    if(is_home)
+        scroll_header()
     resize()
 }
 
