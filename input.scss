@@ -15,17 +15,6 @@ $scroll-background: white;
         scrollbar-color: $theme-color $scroll-background;
         scrollbar-width: thin;
     }
-
-    #psudo_scroll {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 8px;
-        height: 100vh;
-        background: $scroll-background;
-        display: none;
-        z-index: 9;
-    }
 // End scrollbar
 
 body {
@@ -61,13 +50,13 @@ textarea {
 
 #main_logo {
     background: url(img/3d_logo.jpg);
-    position: fixed;
+    // position: fixed;
     // background: url();
     width: 100%;
     height: 100vh;
     background-size: cover;
-    background-position: center;
-    z-index: 0;
+    background-position: center 45%;
+    box-shadow: 0 1px 5px #555;
     transition: .5s;
 }
 
@@ -82,7 +71,7 @@ nav {
     
     padding: 10px;
     // display: none;
-    min-height: 60px;
+    min-height: 30px;
 
     #mobile_nav {
         display: none;
@@ -95,6 +84,10 @@ nav {
         color: $theme-color;
         border-radius: 10px;
         transition: .2s;
+        position: absolute;
+        right: -10px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
     }
 
     #mobile_nav.active {
@@ -115,12 +108,12 @@ nav {
         display: inline-flex;
         justify-content: flex-end;
         box-sizing: border-box;
-        line-height: 60px;
+        // line-height: 60px;
         margin: 0;
-        margin-right: 40px;
         position: absolute;
-        bottom: 25%;
-        right: 0;
+        right: 20px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
     }
     
     li {
@@ -143,7 +136,7 @@ nav {
         width: 100%;
         transform: scaleX(0);
         height: 3px;
-        bottom: 13px;
+        bottom: -1px;
         left: 0;
         background-color: $theme-color;
         transform-origin: bottom center;
@@ -159,7 +152,7 @@ nav {
 }
     
 h1 {
-    padding-top: 120px;
+    padding-top: 130px;
     color: $theme-color;
 }
 
@@ -336,23 +329,31 @@ footer {
 }
 
 @media screen and (max-width: 700px) {
-    ul {
-        // display: none!important;
-        position: fixed;
-        right: -210px;
-        top: 150px;
-        display: block!important;
-        background: #fffe;
-        margin-right: 0!important;
-        border: 2px solid $theme-color;
-        border-radius: 10px 0 0 10px;
-        padding: 30px;
-        padding-left: 80px;
-        text-align: right;
-        transition: .5s;
+    nav {
+        min-height: 40px;
 
-        li {
-            margin: 0;
+        ul {
+            // display: none!important;
+            position: fixed;
+            right: -210px;
+            top: 250px!important;
+            // bottom: default;
+            display: block!important;
+            background: #fffe;
+            margin-right: 0!important;
+            border: 2px solid $theme-color;
+            border-radius: 10px 0 0 10px;
+            padding: 30px;
+            padding-left: 20px;
+            text-align: right;
+            transition: .5s;
+            
+            // -webkit-transform: translateY(0);
+    
+            li {
+                margin: 0;
+                margin-bottom: 10px;
+            }
         }
     }
 

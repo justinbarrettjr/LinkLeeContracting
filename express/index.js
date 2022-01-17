@@ -15,12 +15,7 @@ function init() {
     nav.ul = document.querySelector("nav ul")
 
     setTimeout(function(){
-        if(is_home && window.scrollY > 1){
-            document.querySelector('#main_logo').style.display = 'none'
-            setTimeout(function() {
-                document.querySelector('#main_logo').style.display = 'block'
-            }, 500)
-        }else if(is_home){
+        if(is_home && window.scrollY < 3){
             // document.querySelector('#main_logo').style.opacity = '1'
             nav.dom.style.display = 'none'
             nav.dom.style.opacity = '0'
@@ -36,6 +31,9 @@ function init() {
 }
 
 function resize() {
+    if(is_home)
+        document.querySelector('#main_logo').style.height = window.innerWidth / 2.8 + 'px'
+
     if(document.body.offsetHeight <= window.innerHeight){
         document.querySelector("footer").style.position = "fixed"
         document.querySelector("footer").style.bottom = "0"
@@ -73,16 +71,21 @@ document.onscroll = function(e) {
 }
 
 function scroll_header() {
-    if(window.scrollY > 3){
-        document.querySelector('#main_logo').style.height = '0'
+    if(window.scrollY > 10)
         nav.dom.style.background = '#fffd'
+    else
+        nav.dom.style.background = 'transparent'
+        
+    if(window.scrollY > document.querySelector('#main_logo').offsetHeight - 100){
+        // document.querySelector('#main_logo').style.height = '0'
         // nav.img.style.opacity = '1'
         nav.img.style.height = '90px'
+        document.querySelector('#main_logo').style.opacity = '0'
     }else{
-        document.querySelector('#main_logo').style.height = '100vh'
-        nav.dom.style.background = 'transparent'
+        // document.querySelector('#main_logo').style.height = '100vh'
         // nav.img.style.opacity = '0'
         nav.img.style.height = '0px'
+        document.querySelector('#main_logo').style.opacity = '1'
     }
 
     
