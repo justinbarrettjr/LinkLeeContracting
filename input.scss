@@ -58,6 +58,8 @@ textarea {
     background-position: center 45%;
     box-shadow: 0 1px 5px #555;
     transition: .5s;
+    position: sticky;
+    z-index: 8;
 }
 
 nav {

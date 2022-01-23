@@ -8,12 +8,13 @@ document.addEventListener("DOMContentLoaded", function(){
   
 
 function init() {
+    console.log('javascript loaded')
     is_home = window.location.href.includes('index.html')
 
     nav.dom = document.querySelector("nav")
     nav.img = document.querySelector("nav img")
     nav.ul = document.querySelector("nav ul")
-
+    
     setTimeout(function(){
         if(is_home && window.scrollY < 3){
             // document.querySelector('#main_logo').style.opacity = '1'
@@ -31,9 +32,10 @@ function init() {
 }
 
 function resize() {
-    if(is_home)
+    if(is_home){
         document.querySelector('#main_logo').style.height = window.innerWidth / 2.8 + 'px'
-
+        document.querySelector('#main_logo').style.top = -(window.innerWidth / 2.8 - 115) + 'px'
+}
     if(document.body.offsetHeight <= window.innerHeight){
         document.querySelector("footer").style.position = "fixed"
         document.querySelector("footer").style.bottom = "0"
@@ -54,7 +56,7 @@ document.onscroll = function(e) {
         if(window.scrollY < 10)
             clear_all()
         else{
-            if(window.scrollY > document.getElementById(id).offsetTop - 100){
+            if(window.scrollY > document.getElementById(id).offsetTop + 200){
                 clear_all()
                 document.getElementById(`nav_${id}`).classList.add("active")
             }
@@ -71,21 +73,25 @@ document.onscroll = function(e) {
 }
 
 function scroll_header() {
-    if(window.scrollY > 10)
-        nav.dom.style.background = '#fffd'
-    else
-        nav.dom.style.background = 'transparent'
-        
-    if(window.scrollY > document.querySelector('#main_logo').offsetHeight - 100){
+    console.debug('scroll header')
+    if(window.scrollY > document.querySelector('#main_logo').offsetHeight){
+        document.querySelector('#main_logo').style.opacity = '0'
+    }else{
+        document.querySelector('#main_logo').style.opacity = '1'
+        }
+
+    if(window.scrollY >  document.querySelector('#main_logo').offsetHeight - 115){
         // document.querySelector('#main_logo').style.height = '0'
         // nav.img.style.opacity = '1'
+        nav.dom.style.background = '#fffe'
         nav.img.style.height = '90px'
-        document.querySelector('#main_logo').style.opacity = '0'
+        // document.querySelector('#main_logo').style.opacity = '0'
     }else{
         // document.querySelector('#main_logo').style.height = '100vh'
         // nav.img.style.opacity = '0'
         nav.img.style.height = '0px'
-        document.querySelector('#main_logo').style.opacity = '1'
+        nav.dom.style.background = 'transparent'
+        // document.querySelector('#main_logo').style.opacity = '1'
     }
 
     
